@@ -1,0 +1,38 @@
+[
+    {
+        "id": "EXL001",
+        "topic": "Formulas & Functions",
+        "question": "Explain the difference between an absolute and a relative cell reference in Excel, and provide an example of when you would use each.",
+        "expected_answer_keywords": ["$", "fixed", "changes", "copy down", "drag formula"],
+        "expected_answer_description": "A **relative cell reference** (e.g., A1) changes when a formula is copied to other cells. For example, if `=A1+B1` is in C1 and copied to C2, it becomes `=A2+B2`. This is the default behavior and is useful when you want to apply the same logic to different rows or columns of data.\n\nAn **absolute cell reference** (e.g., $A$1) remains fixed when a formula is copied. The dollar signs lock the row and/or column. This is used when a formula needs to always refer to a specific cell, like a fixed exchange rate, a tax rate, or a constant value that shouldn't change when the formula is moved.",
+        "evaluation_criteria": "Assess for clear understanding of both types, correct explanation of their behavior when copied, and appropriate real-world examples for each. Score 1-5.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "EXL002",
+        "topic": "Data Analysis & Pivot Tables",
+        "question": "Describe the steps to create a basic PivotTable in Excel, and explain the purpose of the 'Values' area within a PivotTable.",
+        "expected_answer_keywords": ["select data", "Insert tab", "PivotTable", "drag fields", "Rows", "Columns", "Values", "Filters", "summarize", "aggregate", "count", "sum", "average"],
+        "expected_answer_description": "**Steps to create a basic PivotTable:**\n1. Select any cell within your data range.\n2. Go to the 'Insert' tab on the Excel ribbon.\n3. Click 'PivotTable'.\n4. In the 'Create PivotTable' dialog box, ensure the correct table/range is selected and choose where to place the PivotTable (e.g., 'New Worksheet'). Click 'OK'.\n5. The PivotTable Fields pane appears. Drag fields to the appropriate areas (Rows, Columns, Values, Filters).\n\n**Purpose of the 'Values' area:**\nThe 'Values' area is where you place numerical fields that you want to **summarize** or **aggregate** (e.g., sum, count, average, max, min). When you drag a field here, Excel automatically applies a default aggregation function (usually SUM for numbers, COUNT for text). Its purpose is to perform calculations on the data and display the results in the PivotTable.",
+        "evaluation_criteria": "Assess for accurate steps to create a PivotTable and a clear, correct explanation of the 'Values' area's function, including common aggregations. Score 1-5.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "EXL003",
+        "topic": "Conditional Formatting",
+        "question": "You have a list of sales figures. How would you quickly highlight all sales that are above the average using Conditional Formatting?",
+        "expected_answer_keywords": ["select range", "Conditional Formatting", "Top/Bottom Rules", "Above Average", "data bars", "color scales", "icon sets"],
+        "expected_answer_description": "To quickly highlight sales figures above the average:\n1. Select the range of cells containing the sales figures.\n2. Go to the 'Home' tab on the Excel ribbon.\n3. In the 'Styles' group, click 'Conditional Formatting'.\n4. Select 'Top/Bottom Rules'.\n5. Choose 'Above Average...'.\n6. In the dialog box, select the desired formatting (e.g., 'Green Fill with Dark Green Text') and click 'OK'.\nExcel will automatically calculate the average of the selected range and apply the formatting to cells whose values are greater than that average.",
+        "evaluation_criteria": "Evaluate for correct and concise steps to apply 'Above Average' conditional formatting. Does the candidate demonstrate practical application knowledge? Score 1-5.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "EXL004",
+        "topic": "VLOOKUP/XLOOKUP",
+        "question": "Explain a scenario where VLOOKUP is a useful function. What are its limitations, and what modern function might you use instead to overcome these limitations?",
+        "expected_answer_keywords": ["lookup value", "table array", "column index number", "range lookup", "exact match", "left lookup", "insert/delete columns", "XLOOKUP", "search_mode", "search_order"],
+        "expected_answer_description": "**VLOOKUP Scenario:** VLOOKUP is useful when you need to find information in a large table based on a lookup value. For example, looking up a product name (lookup value) in a product catalog (table array) to retrieve its price (column index number) or description.\n\n**VLOOKUP Limitations:**\n1.  **Left-to-Right Only:** It can only look up values in the leftmost column of the table array and return values from columns to its right. It cannot search to the left.\n2.  **Column Insertion/Deletion Issues:** If columns are inserted or deleted within the table array, the `col_index_num` argument needs to be manually updated, which can break formulas.\n3.  **Exact Match Default (implicit):** While it has `range_lookup`, many users inadvertently use approximate match or get confused, leading to incorrect results if exact match isn't explicitly specified.\n\n**Modern Function to Overcome Limitations:**\n**XLOOKUP** is the modern successor to VLOOKUP (and HLOOKUP). It overcomes VLOOKUP's limitations by:\n* **Bi-directional Search:** It can look up values to the left or right.\n* **No Column Index:** It uses separate `lookup_array` and `return_array` arguments, making it immune to column insertions/deletions.\n* **Exact Match Default:** Its default `match_mode` is exact match, reducing errors.\n* **Other features:** It also handles approximate matches, wildcard characters, searching in reverse, and returning an \"if not found\" value directly.",
+        "evaluation_criteria": "Assess for a clear scenario for VLOOKUP, accurate identification of its key limitations, and correct explanation of how XLOOKUP addresses these. Score 1-5.",
+        "difficulty": "hard"
+    }
+]
