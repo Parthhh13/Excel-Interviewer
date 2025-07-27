@@ -1,5 +1,63 @@
 # AI-Powered Excel Mock Interviewer
 
+---
+
+## Try the Deployed App
+
+**Live Streamlit App:**
+👉 [https://ai-excel-interviewer.streamlit.app/](https://ai-excel-interviewer.streamlit.app/)
+
+---
+
+## Run Locally
+
+Follow these steps to run the app on your local machine:
+
+### 1. Clone the Repository
+```bash
+# Clone this repo and navigate into it
+```
+
+### 2. Install Requirements
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Create a Google API Key
+- Go to [Google Cloud Console](https://console.cloud.google.com/)
+- Create a project and enable the Gemini API (or relevant LLM API)
+- Generate an API key
+
+### 4. Add API Key to .env File
+- Create a file named `.env` in the project root.
+- Add this line:
+  ```
+  GOOGLE_API_KEY=your_api_key_here
+  ```
+
+### 5. Choose the Model (Optional)
+- By default, the app uses `models/gemini-2.0-flash-lite`.
+- To use a different model, edit the model name in `app.py` or `Interviewer.ipynb` where the `ChatGoogleGenerativeAI` instance is created.
+
+### 6. Run the App
+- **Streamlit App:**
+  ```bash
+  streamlit run app.py
+  ```
+- **Jupyter Notebook:**
+  Open `Interviewer.ipynb` in Jupyter and run the cells.
+
+---
+
+## Files & Folders Reference
+- `app.py` — Main Streamlit app
+- `Interviewer.ipynb` — Jupyter notebook version
+- `excel_questions.json` — Question bank
+- `interview_transcripts/` — Saved interview transcripts
+- `interview_feedback/` — Saved feedback reports
+
+---
+
 ## 1. Project Overview
 
 Our company is experiencing rapid growth across its Finance, Operations, and Data Analytics divisions. A critical skill for all new hires is advanced proficiency in Microsoft Excel. However, our traditional manual technical interviews for Excel are time-consuming for senior analysts and lead to inconsistent evaluations, slowing down our hiring pipeline and impacting growth targets. This project proposes an AI-driven solution to automate and standardize this screening process.
